@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<style>
+    html{
+        scroll-behavior: smooth;
+        
+    }
+    #nav-head{
+        position: absolute;
+        left: 0;
+        padding-left: 30px;
+        color: rgb(222, 236, 236);
+    }
+    .navbar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        position: fixed; 
+        top: 0; 
+        width: 100%; 
+        background: rgba(0, 0, 0, 0.6);
+        padding: 10px; 
+        z-index: 1000; 
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        height: 75px;
+        
+    }
+    ul li a{
+        display: flex;
+        text-decoration: none;
+        color:#ffffff;
+        font-size: 16px;
+        margin-right: 25px;
+        transition: color 0.3s ease;
+        
+    }
+    ul{
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        
+    }
+    .main{
+        height: 100vh;
+    }
+    .main h1{
+        margin-bottom: 20px;
+        margin-top: 100px;
+    }
+    .carousel-item{
+        height:700px;
+    }
+    .carousel-item img{
+        height: 100%;
+        object-fit: cover;
+        filter:brightness(0.8);
+    }
+    .carousel-caption{
+        position: absolute;
+        top: 0;
+        margin-top: 200px;
+    }
+    #p1{
+        margin-top: 40px;
+        font-size: 2rem;
+    }
+    #p2{
+        font-size: 3rem;
+        font-weight: bolder;
+        text-transform: uppercase;
+    }
+    #below-carousel{
+        height: 195px;
+        margin-bottom: 5px;
+        background-color:rgb(162, 165, 168) ;
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+    }
+    #below-carousel div{
+        margin-right: 50px;
+    }
+    .below-carousel-caption{
+        display: flex;
+        justify-content: center;
+        color: rgb(46, 47, 47);
+        margin-top: 25px;
+    }
+    #below-carousel .contacts{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 25px;
+    }
+    #history{
+        background-color: #deebee;
+        height: 100vh;
+        width: 100%;
+    }
+    .history-captions{
+        display: flex;
+        justify-content: center;
+        padding-top:110px;
+    }
+    .history-items{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-top: 75px;
+    }
+    .history .right img{
+        width: 450px;
+        height:450px;
+        object-fit: cover;
+        margin-right: 50px;
+        margin-left: 100px;
+    }
+    .history .right{
+        display: flex;
+        justify-content: center;
+    }
+    .history .left{
+        margin-left: 50px;
+        font-size: 1rem;
+    }
+    #places{
+        height: 100vh;
+        background-color: #a4b5b9;
+    }
+    .places .carousel-item{
+        height:px;
+    }
+    .places .carousel-item img{
+        height: 100%;
+        object-fit: cover;
+        filter:brightness(0.8);
+    }
+    #below-carousel-one{
+        background-color: #a4b5b9;
+        height: 195px;
+        
+    }
+
+    #below-caption{
+       margin: 15px 20px 0 20px;
+       text-align: justify;
+    
+    }
+    #footer #below-carousel{
+        background-color: rgb(110, 110, 110);
+        
+    }
+    @media screen and (max-width: 600px) {
+        ul{
+            padding-left: 70px;
+        }
+        .below-carousel-caption{
+        margin-top: 5px;
+        }
+        #below-carousel .contacts{
+            flex-direction: row;
+            margin-top: 0;
+            width: 50%;
+            margin-left: 25%;
+        }
+        .history-items{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-top: 10px;
+        }
+        .history .left{
+        margin-left: 10px;
+        }
+        .history .right img{
+        width: 400px;
+        height:200px;
+        }
+        #places .carousel-item{
+            height:400px;
+        }
+        #below-carousel-one{
+            margin:10px 10px 0 10px;
+            text-align: justify;
+        }
+        #places #below-caption{
+            font-size: 14px;
+            
+        }
+        
+    }
+    @media screen and (max-width: 1100px){
+        .history-items{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-top: 10px;
+        }
+        .history .left{
+        margin-left: 10px;
+        }
+        .history .right img{
+        width: 400px;
+        height:200px;
+        display: none;
+        }
+    }
+    @media screen and (max-height: 700px) {
+        .history .right img{
+        width: 200;
+        height:100px;
+        }
+        
+    }
+</style>
+<body><div class="navbar">
+       
+    <h1 id="nav-head">1C</h1> 
+
+<ul>
+    <li><a href="#main">Home</a></li>
+    <li><a href="#history">History</a></li>
+    <li><a href="#places">Places you can find</a></li>
+    <li><a href="#footer">Contacts</a></li>
+    
+</ul>
+
+</div>
+<div class="main" id="main">
+    
+    <div class="cotainer">
+        <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="barangayhall.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption   " id="caption1">
+                    <P id="p1">VISIT AND DISCOVER</P>
+                    <p id="p2">Cordova Barangay poblacion</p>
+                    
+                    <a href="https://www.facebook.com/poblacion.cordova.3" class="btn btn-primary">Know more</a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="church.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="church(1).jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        <div id="below-carousel">
+            <div class="below-carousel-caption">
+                <h3>Contacts</h3>
+            </div>
+            <div class="contacts">
+            <div>
+                <p>Cordova Fire Station</p>
+                <i class='bx bxs-phone-call'>  0933 394 9073</i>
+            </div>
+            <div>
+                <p>Cordova Police Station</p>
+                <i class='bx bxs-phone-call'>  (032) 496 8164.</i>
+            </div>
+            <div>
+                <p>Cordova Poblacion Barangay Hall</p>
+                <i class='bx bxs-phone-call'>  446-8381.</i>
+            </div>
+            </div>
+        </div>
+        
+</div>
+
+<div class="history" id="history">
+    <div class="history-captions">
+        <div>
+        <h3>History of Cordova</h3>
+        </div>
+    </div>
+    <div class="history-items">
+        
+        <div class="left">
+            
+            <p>
+                Barangay Poblacion is located in Cordova, a municipality in the province of Cebu, Philippines. Cordova is known for its rich cultural heritage, picturesque landscapes, and vibrant community life. Barangay Poblacion likely serves as the town center or central district of Cordova, hosting various local government offices, commercial establishments, and community facilities. It's an area where residents gather for various activities and where visitors can experience the local culture and way of life.
+            </p>
+            <p>
+                We conducted an interview with the Barangay Captain, Mr. Basillote, and he stated that the name Población itself means a center of a Municipality. It typically houses important institutions such as the barangay hall, health center, and possibly a public market. The area may also feature a plaza or park where residents gather for events, celebrations, or simply to socialize. However, the name Poblacion in the old times doesn’t exist as there were only three Barangays in Cordova until such time that many Sitios (parts of barangay) are introduced.
+            </p>
+            
+            <p>Visit Cordova Poblacion Profile at <a href="https://www.philatlas.com/visayas/r07/cebu/cordova/poblacion.html" class="btn btn-primary">PhilAtlas</a></p>
+        </div>
+        <div class="right">
+            <img src="bg.jpg" alt="Jashen">
+        </div>
+    </div>
+</div>
+
+<div class="places" id="places">
+    <div id="carouselPlaces" class="carousel slide" data-bs-touch="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="5" aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselPlaces" data-bs-slide-to="6" aria-label="Slide 7"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="barangayhall.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="plaza(1).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="church(1).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="policestation(1).jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="fire station.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="sportsground.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="sportsgroundandcomplex.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="publicmarket.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselPlaces" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselPlaces" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div id="below-carousel-one">
+        <div class="below-carousel-caption">
+            <h3>APPRECIATE POBLACION CORDOVA AND ITS BEAUTY</h3>
+        </div>
+        <div class="below-caption" id="below-caption">
+        <p>At the top are images that will encourage you to appreciate the beauty of Barangay Poblacion. 
+            It is not just a barangay that serves as the center of the Municipality but also a hub of beauty, showcasing stunning landscapes and cultural landmarks. 
+            This area is a blend of traditional charm and modern development, where vibrant markets, historical sites, and green spaces coexist harmoniously. 
+            The images capture the essence of its scenic spots, community life, and architectural marvels, inviting you to explore and experience the unique character and allure of Barangay Poblacion. 
+            Whether it's the bustling town plaza, serene parks, or cultural festivals, there's always something captivating to discover in this dynamic barangay.
+        </p>
+        </div>
+    </div>
+</div>
+<div id="footer" class="footer">
+    <div id="below-carousel">
+        <div class="below-carousel-caption">
+            <h3>Contacts</h3>
+        </div>
+        <div class="contacts">
+        <div>
+            <p>Contact us:</p>
+            <i class='bx bxs-phone-call'>  09770887271</i>
+        
+            <i class='bx bxs-phone-call'>  09533987065</i>
+        
+            <i class='bx bxs-phone-call'>  09617291300</i>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</html>
